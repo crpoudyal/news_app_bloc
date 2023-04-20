@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:news_app_bloc/screens/home_screen.dart';
+import 'package:news_app_bloc/screens/tab_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+          context, MaterialPageRoute(builder: (context) => const TabScreen()));
     });
   }
 
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 10,
             ),
             Text(
-              "News Bloc.",
+              "Bloc news.",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
             ),
           ],
