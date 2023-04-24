@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_bloc/screens/business_news_screen.dart';
 import 'package:news_app_bloc/screens/sport_news_screen.dart';
+import 'package:news_app_bloc/screens/tech_news_screen.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
@@ -18,17 +19,49 @@ class _TabScreenState extends State<TabScreen> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: const Text("Bloc news."),
+            backgroundColor: Colors.white,
+            title: const Text(
+              "Bloc news.",
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            actions: const [
+              Padding(
+                padding: EdgeInsets.only(right: 8.0),
+                child: Icon(
+                  Icons.notifications,
+                  color: Colors.black,
+                ),
+              )
+            ],
             bottom: const TabBar(
               tabs: [
                 Tab(
-                  child: Text("Sports"),
+                  child: Text(
+                    "Sports",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20),
+                  ),
                 ),
                 Tab(
-                  child: Text("Business"),
+                  child: Text(
+                    "Business",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20),
+                  ),
                 ),
                 Tab(
-                  child: Text("Technology"),
+                  child: Text(
+                    "Technology",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20),
+                  ),
                 ),
               ],
             ),
@@ -36,7 +69,7 @@ class _TabScreenState extends State<TabScreen> {
           body: const TabBarView(children: [
             SportNewsScreen(),
             BusinessNewsScreen(),
-            SportNewsScreen(),
+            TechNewsScreen(),
           ]),
         ),
       ),

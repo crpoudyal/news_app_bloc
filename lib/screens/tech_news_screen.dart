@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_bloc/bloc/news_bloc.dart';
+import 'package:news_app_bloc/bloc/tech_bloc.dart';
 import 'package:news_app_bloc/screens/details_screen.dart';
 
-class SportNewsScreen extends StatefulWidget {
-  const SportNewsScreen({super.key});
+class TechNewsScreen extends StatefulWidget {
+  const TechNewsScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _SportNewsScreenState createState() => _SportNewsScreenState();
+  _TechNewsScreenState createState() => _TechNewsScreenState();
 }
 
-class _SportNewsScreenState extends State<SportNewsScreen> {
+class _TechNewsScreenState extends State<TechNewsScreen> {
   @override
   void initState() {
     super.initState();
@@ -24,13 +24,13 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<NewsBloc, NewsState>(
+      body: BlocBuilder<TechBloc, TechState>(
         builder: (context, state) {
-          if (state is NewsLoadingState) {
+          if (state is TechLoadingState) {
             return const Center(
               child: CircularProgressIndicator(),
             );
-          } else if (state is NewsLoadedState) {
+          } else if (state is TechLoadedState) {
             return Column(
               children: [
                 SizedBox(
@@ -43,7 +43,7 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                     ),
                   ),
                 ),
-                BlocBuilder<NewsBloc, NewsState>(
+                BlocBuilder<TechBloc, TechState>(
                   builder: (context, state) {
                     return SizedBox(
                       height: 250,
@@ -58,7 +58,7 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                           });
                         },
                         itemBuilder: (context, pagePosition) {
-                          if (state is NewsLoadedState) {
+                          if (state is TechLoadedState) {
                             return Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
@@ -212,7 +212,7 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                 ),
               ],
             );
-          } else if (state is NewsErrorState) {
+          } else if (state is TechErrorState) {
             String error = state.errorMessage;
 
             return Center(
