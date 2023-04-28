@@ -115,7 +115,7 @@ class _TechNewsScreenState extends State<TechNewsScreen> {
                               ),
                             );
                           }
-                          return null;
+                          return const SizedBox();
                         },
                       ),
                     );

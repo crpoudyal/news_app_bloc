@@ -4,8 +4,7 @@ import 'package:news_app_bloc/bloc/business_bloc.dart';
 import 'package:news_app_bloc/screens/details_screen.dart';
 
 class BusinessNewsScreen extends StatefulWidget {
-  const BusinessNewsScreen({super.key});
-
+  const BusinessNewsScreen({Key? key}) : super(key: key);
   @override
   // ignore: library_private_types_in_public_api
   _BusinessNewsScreenState createState() => _BusinessNewsScreenState();
@@ -115,7 +114,7 @@ class _BusinessNewsScreenState extends State<BusinessNewsScreen> {
                               ),
                             );
                           }
-                          return null;
+                          return const SizedBox();
                         },
                       ),
                     );

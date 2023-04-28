@@ -115,7 +115,7 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                               ),
                             );
                           }
-                          return null;
+                          return const SizedBox();
                         },
                       ),
                     );
