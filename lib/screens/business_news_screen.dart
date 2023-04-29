@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_bloc/bloc/business_bloc.dart';
+import 'package:news_app_bloc/bloc/business%20bloc/business_bloc.dart';
 import 'package:news_app_bloc/screens/details_screen.dart';
 
 class BusinessNewsScreen extends StatefulWidget {

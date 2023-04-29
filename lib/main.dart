@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_bloc/bloc/business_bloc.dart';
-import 'package:news_app_bloc/bloc/news_bloc.dart';
-import 'package:news_app_bloc/bloc/tech_bloc.dart';
+import 'package:news_app_bloc/bloc/business%20bloc/business_bloc.dart';
+import 'package:news_app_bloc/bloc/news%20bloc/news_bloc.dart';
+import 'package:news_app_bloc/bloc/tech%20bloc/tech_bloc.dart';
+
 import 'package:news_app_bloc/repositories/business_news_repo.dart';
 import 'package:news_app_bloc/repositories/news_repo.dart';
 import 'package:news_app_bloc/screens/splash_screen.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_bloc/bloc/news_bloc.dart';
+import 'package:news_app_bloc/bloc/news%20bloc/news_bloc.dart';
 import 'package:news_app_bloc/screens/details_screen.dart';
 
 class SportNewsScreen extends StatefulWidget {
