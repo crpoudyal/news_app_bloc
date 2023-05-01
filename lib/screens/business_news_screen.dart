@@ -67,7 +67,12 @@ class _BusinessNewsScreenState extends State<BusinessNewsScreen> {
                                     fit: BoxFit.cover,
                                     image: NetworkImage(
                                       state.newsList[pagePosition].urlToImage
-                                          .toString(),
+                                                  .toString() !=
+                                              'null'
+                                          ? state
+                                              .newsList[pagePosition].urlToImage
+                                              .toString()
+                                          : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
                                     ),
                                   ),
                                 ),
@@ -174,9 +179,15 @@ class _BusinessNewsScreenState extends State<BusinessNewsScreen> {
                                         bottomLeft: Radius.circular(20),
                                       ),
                                       image: DecorationImage(
-                                          image: NetworkImage(state
-                                              .newsList[index].urlToImage
-                                              .toString()),
+                                          image: NetworkImage(
+                                            state.newsList[index].urlToImage
+                                                        .toString() !=
+                                                    'null'
+                                                ? state
+                                                    .newsList[index].urlToImage
+                                                    .toString()
+                                                : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
+                                          ),
                                           fit: BoxFit.fill),
                                     ),
                                   ),

@@ -35,6 +35,7 @@ class _TabScreenState extends State<TabScreen> {
               )
             ],
             bottom: const TabBar(
+              isScrollable: true,
               tabs: [
                 Tab(
                   child: Text(
