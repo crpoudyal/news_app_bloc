@@ -67,11 +67,11 @@ class _TechNewsScreenState extends State<TechNewsScreen> {
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: NetworkImage(
-                                      state.newsList[pagePosition].urlToImage
+                                      state.newsList[pagePosition].imageUrl
                                                   .toString() !=
                                               'null'
                                           ? state
-                                              .newsList[pagePosition].urlToImage
+                                              .newsList[pagePosition].imageUrl
                                               .toString()
                                           : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
                                     ),
@@ -107,7 +107,7 @@ class _TechNewsScreenState extends State<TechNewsScreen> {
                                         height: 8,
                                       ),
                                       Text(
-                                        state.newsList[pagePosition].author
+                                        state.newsList[pagePosition].sourceName
                                             .toString(),
                                         style: const TextStyle(
                                             color: Colors.white54,
@@ -149,17 +149,19 @@ class _TechNewsScreenState extends State<TechNewsScreen> {
                                   description: state.newsList[index].description
                                       .toString(),
                                   title: state.newsList[index].title.toString(),
-                                  urlToImage: state.newsList[index].urlToImage
-                                      .toString(),
+                                  urlToImage:
+                                      state.newsList[index].imageUrl.toString(),
                                   tag: 'news$index',
-                                  author:
-                                      state.newsList[index].author.toString(),
+                                  author: state.newsList[index].sourceName
+                                      .toString(),
                                   content:
                                       state.newsList[index].content.toString(),
-                                  publishedAt: state.newsList[index].publishedAt
-                                      .toString(),
+                                  publishedAt:
+                                      state.newsList[index].pubDate.toString(),
                                   url: Uri.parse(
-                                      state.newsList[index].url.toString()),
+                                      state.newsList[index].link.toString()),
+                                  authorIcon: state.newsList[index].sourceIcon
+                                      .toString(),
                                 ),
                               ),
                             );
@@ -181,11 +183,10 @@ class _TechNewsScreenState extends State<TechNewsScreen> {
                                       ),
                                       image: DecorationImage(
                                           image: NetworkImage(
-                                            state.newsList[index].urlToImage
+                                            state.newsList[index].imageUrl
                                                         .toString() !=
                                                     'null'
-                                                ? state
-                                                    .newsList[index].urlToImage
+                                                ? state.newsList[index].imageUrl
                                                     .toString()
                                                 : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
                                           ),

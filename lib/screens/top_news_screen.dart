@@ -3,15 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_bloc/bloc/news%20bloc/news_bloc.dart';
 import 'package:news_app_bloc/screens/details_screen.dart';
 
-class SportNewsScreen extends StatefulWidget {
-  const SportNewsScreen({super.key});
+class TopNewsScreen extends StatefulWidget {
+  const TopNewsScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _SportNewsScreenState createState() => _SportNewsScreenState();
+  TopNewsScreenState createState() => TopNewsScreenState();
 }
 
-class _SportNewsScreenState extends State<SportNewsScreen> {
+class TopNewsScreenState extends State<TopNewsScreen> {
   @override
   void initState() {
     super.initState();
@@ -63,15 +62,15 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(16),
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: NetworkImage(
-                                      state.newsList[pagePosition].urlToImage
+                                      state.newsList[pagePosition].imageUrl
                                                   .toString() !=
                                               'null'
                                           ? state
-                                              .newsList[pagePosition].urlToImage
+                                              .newsList[pagePosition].imageUrl
                                               .toString()
                                           : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
                                     ),
@@ -99,19 +98,18 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                                         state.newsList[pagePosition].title
                                             .toString(),
                                         style: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold),
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                        ),
                                       ),
                                       const SizedBox(
                                         height: 8,
                                       ),
                                       Text(
-                                        state.newsList[pagePosition].author
+                                        state.newsList[pagePosition].sourceName
                                             .toString(),
                                         style: const TextStyle(
                                             color: Colors.white54,
-                                            fontWeight: FontWeight.normal,
                                             fontSize: 14),
                                       )
                                     ],
@@ -149,17 +147,19 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                                   description: state.newsList[index].description
                                       .toString(),
                                   title: state.newsList[index].title.toString(),
-                                  urlToImage: state.newsList[index].urlToImage
-                                      .toString(),
+                                  urlToImage:
+                                      state.newsList[index].imageUrl.toString(),
                                   tag: 'news$index',
-                                  author:
-                                      state.newsList[index].author.toString(),
+                                  author: state.newsList[index].sourceName
+                                      .toString(),
                                   content:
                                       state.newsList[index].content.toString(),
-                                  publishedAt: state.newsList[index].publishedAt
-                                      .toString(),
+                                  publishedAt:
+                                      state.newsList[index].pubDate.toString(),
                                   url: Uri.parse(
-                                      state.newsList[index].url.toString()),
+                                      state.newsList[index].link.toString()),
+                                  authorIcon: state.newsList[index].sourceIcon
+                                      .toString(),
                                 ),
                               ),
                             );
@@ -181,11 +181,10 @@ class _SportNewsScreenState extends State<SportNewsScreen> {
                                       ),
                                       image: DecorationImage(
                                           image: NetworkImage(
-                                            state.newsList[index].urlToImage
+                                            state.newsList[index].imageUrl
                                                         .toString() !=
                                                     'null'
-                                                ? state
-                                                    .newsList[index].urlToImage
+                                                ? state.newsList[index].imageUrl
                                                     .toString()
                                                 : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
                                           ),

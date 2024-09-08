@@ -8,21 +8,20 @@ import 'package:news_app_bloc/utils/app_url.dart';
 
 class TechRepo {
   Future<List<NewsModel>> getNews() async {
-    final dynamic response = await http.get(Uri.parse(AppUrl.techNewsUrl));
+    final response = await http.get(Uri.parse(AppUrl.techNewsUrl));
 
-    var data = jsonDecode(response.body);
+    // Decode the response body using utf8.decode
+    var decodedResponse = utf8.decode(response.bodyBytes);
+
+    var data = jsonDecode(decodedResponse);
     List<NewsModel> newsModelList = [];
-    log('data : ${data['articles']}');
+    log('data : ${data['results']}');
 
     if (response.statusCode == 200) {
-      data['articles'].forEach((e) {
+      data['results'].forEach((e) {
         newsModelList.add(NewsModel.fromJson(e));
       });
 
-      // log(" news List : ${newsModelList.forEach((element) { })}");
-      // for (var element in newsModelList) {
-      //   log("${element.title}");
-      // }
       return newsModelList;
     } else {
       return newsModelList;

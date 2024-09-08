@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_bloc/screens/business_news_screen.dart';
-import 'package:news_app_bloc/screens/sport_news_screen.dart';
+import 'package:news_app_bloc/screens/top_news_screen.dart';
 import 'package:news_app_bloc/screens/tech_news_screen.dart';
 
 class TabScreen extends StatefulWidget {
@@ -39,7 +39,7 @@ class _TabScreenState extends State<TabScreen> {
               tabs: [
                 Tab(
                   child: Text(
-                    "Sports",
+                    "Top",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w900,
@@ -68,7 +68,7 @@ class _TabScreenState extends State<TabScreen> {
             ),
           ),
           body: const TabBarView(children: [
-            SportNewsScreen(),
+            TopNewsScreen(),
             BusinessNewsScreen(),
             TechNewsScreen(),
           ]),

@@ -1,11 +1,11 @@
 class AppUrl {
   // ignore: non_constant_identifier_names
-  static String ApiKey = "f6330cdff6244a53b8b7e0082020c8e2";
+  static String ApiKey = "pub_524969612ccfa01ee90508e7d3ca26951f1ad";
   static String newsUrl =
-      "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=$ApiKey";
+      "https://newsdata.io/api/1/latest?country=np&category=top&apiKey=$ApiKey";
   static String businessNewsUrl =
-      "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=$ApiKey";
+      "https://newsdata.io/api/1/latest?country=np&category=business&apiKey=$ApiKey";
 
   static String techNewsUrl =
-      "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=$ApiKey";
+      "https://newsdata.io/api/1/latest?country=np&category=technology&apiKey=$ApiKey";
 }
